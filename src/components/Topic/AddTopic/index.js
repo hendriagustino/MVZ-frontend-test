@@ -47,7 +47,6 @@ class index extends Component {
   render() {
     return (
       <div>
-        
         <form id="myForm">
           <input type="text" id="title" onChange={this.handleChange} maxLength="50" style={titleInputStyle} placeholder='Title'>
           </input>
@@ -56,9 +55,7 @@ class index extends Component {
           </textarea>
           <br/>
           <button type="submit" value="Submit" onClick={this.handleClick}>Submit</button>
-
         </form>
-
       </div>
     )
   }

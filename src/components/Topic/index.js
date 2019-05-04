@@ -17,6 +17,12 @@ class index extends Component {
     });
   }
 
+  renderVoteCount=(i)=>{
+    if( this.state.topic[i].vote >= 0 )
+       return this.state.topic[i].vote;
+    return 0;
+  }
+
   render() {
     const result = this.state.topic.map(topic => ({ title: topic.title, text: topic.text, vote: topic.vote }));
     console.log(result);
@@ -52,7 +58,10 @@ class index extends Component {
                   +
                 </button>
 
-                <span style={{marginLeft: '10px'}}>{topic.vote} &nbsp;</span>
+                <span style={{marginLeft: '10px'}}>
+                  {this.renderVoteCount(i)}
+                  &nbsp;
+                </span>
 
                 <button style={{fontSize: '20px'}}
                   onClick={() => {var newState = Object.assign({}, this.state);
