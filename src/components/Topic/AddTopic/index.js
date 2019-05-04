@@ -35,6 +35,7 @@ class index extends Component {
   }
 
   handleClick = (e) => {
+    e.preventDefault();
     const data = {
       title: this.state.title,
       text: this.state.text
