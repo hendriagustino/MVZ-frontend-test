@@ -17,10 +17,21 @@ class index extends Component {
     });
   }
 
-  render() {
-    const result = this.state.topic.map(topic => ({ title: topic.title, text: topic.text, vote: topic.vote }));
-    console.log(result);
+  renderVoteCount=(i)=>{
+    if( this.state.topic[i].vote >= 0 )
+       return this.state.topic[i].vote;
+    return 0;
+  }
 
+  render() {
+
+    const database = 
+      this.state.topic.sort(function(a,b){
+        return b.vote - a.vote;
+    });
+
+    console.log(database, 'database');
+    
     return (
       <div>
 
@@ -28,12 +39,12 @@ class index extends Component {
         <hr></hr>
 
         <div>
-
+          
           {
             this.state.topic.map((topic, i) =>
               <div key={i}
                 style={{
-                  width: '50vw',
+                  width: '65vw',
                   height: '200px',
                   border: '1px solid black',
                   marginBottom: '10px',
@@ -52,7 +63,10 @@ class index extends Component {
                   +
                 </button>
 
-                <span style={{marginLeft: '10px'}}>{topic.vote} &nbsp;</span>
+                <span style={{marginLeft: '10px'}}>
+                  {this.renderVoteCount(i)}
+                  &nbsp;
+                </span>
 
                 <button style={{fontSize: '20px'}}
                   onClick={() => {var newState = Object.assign({}, this.state);
