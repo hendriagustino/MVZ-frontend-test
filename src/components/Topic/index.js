@@ -12,26 +12,12 @@ class index extends Component {
       topic: this.state.topic.concat({
         'title': data.title,
         'text': data.text,
-        'vote': 77
+        'vote': 0
       })
     });
   }
 
-  upVote = (i) => {
-    var stateCopy = Object.assign({}, this.state);
-    stateCopy.topic[i].vote += 1;
-    this.setState(stateCopy);
-    console.log(stateCopy);
-  }
-
-  downVote = (i) => {
-    var stateCopy = Object.assign({}, this.state);
-    stateCopy.topic[i].vote -= 1;
-    this.setState(stateCopy);
-  }
-
   render() {
-
     const result = this.state.topic.map(topic => ({ title: topic.title, text: topic.text, vote: topic.vote }));
     console.log(result);
 
@@ -42,7 +28,7 @@ class index extends Component {
         <hr></hr>
 
         <div>
-          
+
           {
             this.state.topic.map((topic, i) =>
               <div key={i}
@@ -59,19 +45,19 @@ class index extends Component {
                 <h1>{topic.title}</h1>
                 <p>{topic.text}</p>
 
-                <button
-                  style={{ fontSize: '20px' }}
-                  // onClick={() => this.setState({ topic: this.state.topic[i].vote + 1 })}>
-                  onClick={(i)=>this.upVote}>
+                <button style={{ fontSize: '20px' }}
+                  onClick={() => {var stateCopy = Object.assign({}, this.state);
+                                  stateCopy.topic[i].vote += 1;
+                                  this.setState(stateCopy);}}>
                   +
-              </button>
+                </button>
 
                 <span style={{ marginLeft: '10px' }}>{topic.vote} &nbsp;</span>
 
-                <button
-                  style={{ fontSize: '20px' }}
-                  // onClick={() => this.setState({ topic: this.state.topic[i].vote - 1 })}>
-                  onClick={(i)=>this.downVote}>
+                <button style={{ fontSize: '20px' }}
+                  onClick={() => {var stateCopy = Object.assign({}, this.state);
+                                  stateCopy.topic[i].vote -= 1;
+                                  this.setState(stateCopy);}}>
                   -
               </button>
 
