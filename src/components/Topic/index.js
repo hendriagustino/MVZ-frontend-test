@@ -24,9 +24,14 @@ class index extends Component {
   }
 
   render() {
-    const result = this.state.topic.map(topic => ({ title: topic.title, text: topic.text, vote: topic.vote }));
-    console.log(result);
 
+    const database = 
+      this.state.topic.sort(function(a,b){
+        return b.vote - a.vote;
+    });
+
+    console.log(database, 'database');
+    
     return (
       <div>
 
@@ -34,12 +39,12 @@ class index extends Component {
         <hr></hr>
 
         <div>
-
+          
           {
             this.state.topic.map((topic, i) =>
               <div key={i}
                 style={{
-                  width: '50vw',
+                  width: '65vw',
                   height: '200px',
                   border: '1px solid black',
                   marginBottom: '10px',
