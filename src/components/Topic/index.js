@@ -45,19 +45,19 @@ class index extends Component {
                 <h1>{topic.title}</h1>
                 <p>{topic.text}</p>
 
-                <button style={{ fontSize: '20px' }}
-                  onClick={() => {var stateCopy = Object.assign({}, this.state);
-                                  stateCopy.topic[i].vote += 1;
-                                  this.setState(stateCopy);}}>
+                <button style={{fontSize: '20px'}}
+                  onClick={() => {var newState = Object.assign({}, this.state);
+                                  newState.topic[i].vote += 1;
+                                  this.setState(newState);}}>
                   +
                 </button>
 
-                <span style={{ marginLeft: '10px' }}>{topic.vote} &nbsp;</span>
+                <span style={{marginLeft: '10px'}}>{topic.vote} &nbsp;</span>
 
-                <button style={{ fontSize: '20px' }}
-                  onClick={() => {var stateCopy = Object.assign({}, this.state);
-                                  stateCopy.topic[i].vote -= 1;
-                                  this.setState(stateCopy);}}>
+                <button style={{fontSize: '20px'}}
+                  onClick={() => {var newState = Object.assign({}, this.state);
+                                  newState.topic[i].vote -= 1;
+                                  this.setState(newState);}}>
                   -
               </button>
 
