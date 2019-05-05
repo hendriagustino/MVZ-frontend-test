@@ -1,6 +1,6 @@
 # Reddit Clone - Frontend
 
-Reddit Clone is basically just a clone of Reddit which the author made in order to learn more knowledge about Front-End stack (specifically is React JS) 
+Reddit Clone is basically just a clone of Reddit which the author made in order to learn & gain more knowledge about Front-End stack (specifically is React JS) 
 
 **Reddit Clone** is an app that enable users to :
 - Allow user to submit topics with a max of 255 characters
