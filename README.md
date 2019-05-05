@@ -1,12 +1,8 @@
-# sikawan - frontend
+# Reddit Clone - Frontend
 
-**Sikawan** is an app that allows for 3 main actors ( **Parents** of the students, **School**, and **Department of Education**) to :
-- School / teachers submitting student presence data
-- School / teachers submitting student score
-- Parent checking student's score and presence data
-- Department of Education (DOE) to know list of complaints submitted from parents for school
-
-This application is limited to only the 3 main actors mentioned above.
+**Reddit Clone** is an app that enable users to :
+- Allow user to submit topics with a max of 255 characters
+- Allow users to contribute topics and upvote or downvote these topics
 
 ## REQUIREMENTS
 
@@ -37,30 +33,3 @@ Go to [https://nodejs.org/en/download/](https://nodejs.org/en/download/) and fol
 # START 
 
 `$ npm start`
-
-#LOGIN ACCOUNT 
-
-Role:
-- School <br>
-  `username:`**`garudaschool@gmail.com`** <br>
-  `password:`**`abcabc`**
-- Admin <br>
-  `username:`**`andri`** <br>
-  `password:`**`abcabc`**
-
-## LANGUAGES & TOOLS
-
-- **HTML**
-- **CSS**
-  - CSS3 for styling customization preference
-  - MDBootstrap for React Components Styling
-- **Javascript**
-  - React JS is used for UI 
-  - Redux is used for app state management
-
------------------------------------
-
-## Front-End Member
-* Rakhmatnw
-* Winata Arafat
-* **Hendri Agustino**
