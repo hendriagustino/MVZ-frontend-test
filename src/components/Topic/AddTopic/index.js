@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 const titleInputStyle = {
   fontSize : '15px',
@@ -30,16 +30,11 @@ class index extends Component {
     })
   }
 
-  resetForm = () =>  {
-    document.getElementById("myForm").reset();
-  }
+  resetForm = () =>  {document.getElementById("myForm").reset();}
 
   handleClick = (e) => {
     e.preventDefault();
-    const data = {
-      title: this.state.title,
-      text: this.state.text
-    };
+    const data = {title: this.state.title, text: this.state.text};
     this.props.addTopic(data,e);
     this.resetForm();
   }
