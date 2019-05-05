@@ -26,8 +26,8 @@ Go to [https://nodejs.org/en/download/](https://nodejs.org/en/download/) and fol
 
 ## INSTALL
 
-`$ git clone git@github.com:hendriagustino/sikawanapp.git` <br>
-`$ cd sikawanapp` <br>
+`$ git clone git@github.com:hendriagustino/redditclone.git` <br>
+`$ cd redditclone` <br>
 `$ npm install`
 
 # START 
