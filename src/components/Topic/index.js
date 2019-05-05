@@ -34,6 +34,9 @@ class index extends Component {
     });
   }
 
+  //Vote count only shows 0 and upwards (only absolute number)
+  //This function is to check if Vote Count of each Topic is smaller than 0 (Negative Number)
+  //then it will display the number "0"
   renderVoteCount=(i)=>{
     if( this.state.topic[i].vote >= 0 )
        return this.state.topic[i].vote;
@@ -42,6 +45,7 @@ class index extends Component {
 
   render() {
 
+    //This function below is to sort Topics based only 20 with highest upvotes count. Descendingly.
     const newDatabase= (this.state.topic.sort(function(a,b){ return b.vote - a.vote;})).slice(0,20);
     console.log(newDatabase);
 
@@ -63,6 +67,7 @@ class index extends Component {
 
                 <div>
                   <button style={voteButton}
+                    //this function attached below is to increment on the Vote Count of topic by "1"
                     onClick={() => {var newState = Object.assign({}, this.state);
                                     newState.topic[i].vote += 1;
                                     this.setState(newState);}}>
@@ -75,6 +80,7 @@ class index extends Component {
                   </span>
 
                   <button style={voteButton}
+                  //this function attached below is to decrement on the Vote Count of topic by "1"
                     onClick={() => {var newState = Object.assign({}, this.state);
                                     newState.topic[i].vote -= 1;
                                     this.setState(newState);}}>
