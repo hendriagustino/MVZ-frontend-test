@@ -42,7 +42,7 @@ class index extends Component {
 
   render() {
 
-    const newDatabase= (this.state.topic.sort(function(a,b){ return b.vote - a.vote;})).slice(0,2);
+    const newDatabase= (this.state.topic.sort(function(a,b){ return b.vote - a.vote;})).slice(0,20);
     console.log(newDatabase);
 
     return (
