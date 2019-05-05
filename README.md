@@ -4,6 +4,9 @@
 - Allow user to submit topics with a max of 255 characters
 - Allow users to contribute topics and upvote or downvote these topics
 
+## Unit Testing
+The author has yet unable to implement Unit Testing on this project, because upon doing/ building this project, author was still lacking technical knowledge and skills about Unit Testing tools. Will learn about and implement on it.
+
 ## REQUIREMENTS
 
 For development, you will need to install `Node.js` on your environment.
