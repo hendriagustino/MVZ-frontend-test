@@ -44,8 +44,8 @@ class index extends Component {
             this.state.topic.map((topic, i) =>
               <div key={i}
                 style={{
-                  width: '65vw',
-                  height: '200px',
+                  width: '75vw',
+                  height: '165px',
                   border: '1px solid black',
                   marginBottom: '10px',
                   borderRadius: '5px',
@@ -53,27 +53,31 @@ class index extends Component {
                 }}
               >
 
-                <h1>{topic.title}</h1>
-                <p>{topic.text}</p>
+                <div style={{height: '100px', marginBottom:'10px'}}>
+                  <h1>{topic.title}</h1>
+                  <p>{topic.text}</p>
+                </div>
 
-                <button style={{fontSize: '20px'}}
-                  onClick={() => {var newState = Object.assign({}, this.state);
-                                  newState.topic[i].vote += 1;
-                                  this.setState(newState);}}>
-                  +
+                <div>
+                  <button style={{fontSize: '20px'}}
+                    onClick={() => {var newState = Object.assign({}, this.state);
+                                    newState.topic[i].vote += 1;
+                                    this.setState(newState);}}>
+                    +                
+                  </button>
+
+                  <span style={{marginLeft: '10px'}}>
+                    {this.renderVoteCount(i)}
+                    &nbsp;
+                  </span>
+
+                  <button style={{fontSize: '20px'}}
+                    onClick={() => {var newState = Object.assign({}, this.state);
+                                    newState.topic[i].vote -= 1;
+                                    this.setState(newState);}}>
+                    -
                 </button>
-
-                <span style={{marginLeft: '10px'}}>
-                  {this.renderVoteCount(i)}
-                  &nbsp;
-                </span>
-
-                <button style={{fontSize: '20px'}}
-                  onClick={() => {var newState = Object.assign({}, this.state);
-                                  newState.topic[i].vote -= 1;
-                                  this.setState(newState);}}>
-                  -
-              </button>
+              </div>
 
               </div>
             )
