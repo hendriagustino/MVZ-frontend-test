@@ -1,6 +1,23 @@
 import React, { Component } from 'react'
 import AddTopic from './AddTopic';
 
+const topicContainer = {
+  width: '75vw',
+  height: '165px',
+  border: '1px solid black',
+  marginBottom: '10px',
+  borderRadius: '5px',
+  paddingLeft: '10px'
+}
+
+const titleTextContainer = {
+  height: '100px', 
+  marginBottom:'10px'
+}
+const voteButton = {
+  fontSize: '20px'
+}
+
 class index extends Component {
 
   state = {
@@ -25,13 +42,9 @@ class index extends Component {
 
   render() {
 
-    const database = 
-      this.state.topic.sort(function(a,b){
-        return b.vote - a.vote;
-    });
+    const newDatabase= (this.state.topic.sort(function(a,b){ return b.vote - a.vote;})).slice(0,2);
+    console.log(newDatabase);
 
-    console.log(database, 'database');
-    
     return (
       <div>
 
@@ -39,46 +52,39 @@ class index extends Component {
         <hr></hr>
 
         <div>
-          
           {
             this.state.topic.map((topic, i) =>
-              <div key={i}
-                style={{
-                  width: '65vw',
-                  height: '200px',
-                  border: '1px solid black',
-                  marginBottom: '10px',
-                  borderRadius: '5px',
-                  paddingLeft: '10px'
-                }}
-              >
+              <div key={i} style={topicContainer}>
 
-                <h1>{topic.title}</h1>
-                <p>{topic.text}</p>
+                <div style={titleTextContainer}>
+                  <h1>{topic.title}</h1>
+                  <p>{topic.text}</p>
+                </div>
 
-                <button style={{fontSize: '20px'}}
-                  onClick={() => {var newState = Object.assign({}, this.state);
-                                  newState.topic[i].vote += 1;
-                                  this.setState(newState);}}>
-                  +
+                <div>
+                  <button style={voteButton}
+                    onClick={() => {var newState = Object.assign({}, this.state);
+                                    newState.topic[i].vote += 1;
+                                    this.setState(newState);}}>
+                    +                
+                  </button>
+
+                  <span style={{marginLeft: '10px'}}>
+                    {this.renderVoteCount(i)}
+                    &nbsp;
+                  </span>
+
+                  <button style={voteButton}
+                    onClick={() => {var newState = Object.assign({}, this.state);
+                                    newState.topic[i].vote -= 1;
+                                    this.setState(newState);}}>
+                    -
                 </button>
-
-                <span style={{marginLeft: '10px'}}>
-                  {this.renderVoteCount(i)}
-                  &nbsp;
-                </span>
-
-                <button style={{fontSize: '20px'}}
-                  onClick={() => {var newState = Object.assign({}, this.state);
-                                  newState.topic[i].vote -= 1;
-                                  this.setState(newState);}}>
-                  -
-              </button>
+              </div>
 
               </div>
             )
           }
-
         </div>
 
       </div>
