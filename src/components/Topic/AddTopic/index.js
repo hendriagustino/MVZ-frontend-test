@@ -30,8 +30,11 @@ class index extends Component {
     })
   }
 
+  //this function is to prevent reloading the page (which will reset the data in our state),
+  //yet can still do the Form Resetting. which is what we one whenever we done submitting "Topic"
   resetForm = () =>  {document.getElementById("myForm").reset();}
 
+  //function for submitting to Topic.js whenever user done submitting data of a new topic
   handleClick = (e) => {
     e.preventDefault();
     const data = {title: this.state.title, text: this.state.text};
